@@ -1,8 +1,8 @@
 # typedef关键词
 
-![image-20221013160306793](C:\Users\Lanson\AppData\Roaming\Typora\typora-user-images\image-20221013160306793.png)
+![](images/image-20221208205248592.png)
 
-<img src="C:\Users\Lanson\AppData\Roaming\Typora\typora-user-images\image-20221013160528395.png" alt="image-20221013160528395" style="zoom:50%;" />
+<img src="images/image-20221208205253487.png" alt="image-20221208205253487" style="zoom:67%;" />
 
 ```C
 typedef int int32_t;
@@ -10,11 +10,11 @@ int32_t n = 123;
 printf("n = %d\n", n);  //output:123
 ```
 
-<img src="C:\Users\Lanson\AppData\Roaming\Typora\typora-user-images\image-20221013160737956.png" alt="image-20221013160737956" style="zoom:50%;" />
+<img src="images/image-20221208205259443.png" alt="image-20221208205259443" style="zoom:67%;" />
 
-<img src="C:\Users\Lanson\AppData\Roaming\Typora\typora-user-images\image-20221013160852104.png" alt="image-20221013160852104" style="zoom:50%;" />
+<img src="images/image-20221208205305482.png" alt="image-20221208205305482" style="zoom:67%;" />
 
-<img src="C:\Users\Lanson\AppData\Roaming\Typora\typora-user-images\image-20221013161026901.png" alt="image-20221013161026901" style="zoom:50%;" />
+<img src="images/image-20221208205310976.png" alt="image-20221208205310976" style="zoom:67%;" />
 
 这种**不需要加struct**
 
@@ -26,31 +26,31 @@ printf("n = %d\n", n);  //output:123
 
 typedef不受预处理影响，**在编译时由编译器处理**
 
-<img src="C:\Users\Lanson\AppData\Roaming\Typora\typora-user-images\image-20221013161426144.png" alt="image-20221013161426144" style="zoom:50%;" />
+<img src="images/image-20221208205317316.png" alt="image-20221208205317316" style="zoom:67%;" />
 
-<img src="C:\Users\Lanson\AppData\Roaming\Typora\typora-user-images\image-20221013161440226.png" alt="image-20221013161440226" style="zoom:50%;" />
+<img src="images/image-20221208205322953.png" alt="image-20221208205322953" style="zoom:80%;" />
 
 而**用typedef定义就不会出现这样的情况**
 
 ### 提高整型可移植性
 
-<img src="C:\Users\Lanson\AppData\Roaming\Typora\typora-user-images\image-20221013163232506.png" alt="image-20221013163232506" style="zoom:50%;" />
+<img src="images/image-20221208205328488.png" alt="image-20221208205328488" style="zoom:80%;" />
 
 **整型类型的别名无需自己定义**，编译器会根据本平台的整型范围大小，设置对应的别名，只需要**包含头文件stdint.h**
 
-<img src="C:\Users\Lanson\AppData\Roaming\Typora\typora-user-images\image-20221013163354354.png" alt="image-20221013163354354" style="zoom:50%;" />
+<img src="images/image-20221208205334243.png" alt="image-20221208205334243" style="zoom:67%;" />
 
-<img src="C:\Users\Lanson\AppData\Roaming\Typora\typora-user-images\image-20221013163424442.png" alt="image-20221013163424442" style="zoom:50%;" />
+![image-20221208205340623](images/image-20221208205340623.png)
 
 **printf函数参数如何保证可移植性？**
 
-<img src="C:\Users\Lanson\Desktop\计算机\笔记\C笔记\images\image-20221013164253974.png" alt="image-20221013164253974" style="zoom:50%;" />
+<img src="images/image-20221208205345126.png" alt="image-20221208205345126" style="zoom:67%;" />
 
 需要另一个**头文件  inttypes.h**
 
-<img src="C:\Users\Lanson\Desktop\计算机\笔记\C笔记\images\image-20221013170627326.png" alt="image-20221013170627326" style="zoom:50%;" />
+![image-20221208205351048](images/image-20221208205351048.png)
 
-<img src="C:\Users\Lanson\Desktop\计算机\笔记\C笔记\images\image-20221013170656538.png" alt="image-20221013170656538" style="zoom:50%;" />
+<img src="images/image-20221208205355525.png" alt="image-20221208205355525" style="zoom:67%;" />
 
-<img src="C:\Users\Lanson\Desktop\计算机\笔记\C笔记\images\image-20221013170742451.png" alt="image-20221013170742451" style="zoom:50%;" />
+<img src="images/image-20221208205401188.png" alt="image-20221208205401188" style="zoom:67%;" />
 

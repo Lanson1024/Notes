@@ -2,7 +2,7 @@
 
 ### 用法
 
-<img src="C:\Users\Lanson\AppData\Roaming\Typora\typora-user-images\image-20220926140419827.png" alt="image-20220926140419827" style="zoom: 50%;" />
+![image-20221208195646134](images/image-20221208195646134.png)
 
 若没有与之匹配的case，则跳转到**default**
 
@@ -30,7 +30,7 @@ switch语句后的括号内只能填一个==整型表达式==，**可以没有de
 
 **如果case后没有break，则从匹配的case开始往下依次执行，且执行到default，除非遇到下方某个case有break语句**
 
-<img src="C:\Users\Lanson\AppData\Roaming\Typora\typora-user-images\image-20220926141048384.png" alt="image-20220926141048384" style="zoom:50%;" />
+<img src="images/image-20221208195652373.png" alt="image-20221208195652373" style="zoom:67%;" />
 
 ### 多余量解决办法
 

@@ -6,15 +6,15 @@ scanf函数将键盘输入值存储至变量中
 
 $\textcolor{Red}{需要严格一一对应，包括间隔的符号} $
 
-<img src="C:\Users\Lanson\Desktop\计算机\笔记\C笔记\images\image-20220925154628242.png" alt="image-20220925154628242" style="zoom:50%;" />
+<img src="images/image-20221208195344062.png" alt="image-20221208195344062" style="zoom: 67%;" />
 
-<img src="C:\Users\Lanson\Desktop\计算机\笔记\C笔记\images\image-20220925154647086.png" alt="image-20220925154647086" style="zoom:50%;" />
+<img src="images/image-20221208195355442.png" alt="image-20221208195355442" style="zoom:67%;" />
 
-<img src="C:\Users\Lanson\Desktop\计算机\笔记\C笔记\images\image-20220925154611774.png" alt="image-20220925154611774" style="zoom:50%;" />
+<img src="images/image-20221208195403877.png" alt="image-20221208195403877" style="zoom:67%;" />
 
 **存放到基本变量中时，需在变量名前加\&，若存放到数组中，则不用**
 
-<img src="C:\Users\Lanson\Desktop\计算机\笔记\C笔记\images\image-20220925154801568.png" alt="image-20220925154801568" style="zoom:50%;" />
+![image-20221208195411111](images/image-20221208195411111.png)
 
 $\textcolor{CornflowerBlue}{\%d 若输入字符，则将字符转为ASC码}$
 
@@ -22,7 +22,7 @@ $\textcolor{CornflowerBlue}{\%c若输入数字，则将数字（ASC）码转为�
 
 $\textcolor{YellowOrange}{字符数组不加\&}$
 
-<img src="C:\Users\Lanson\Desktop\计算机\笔记\C笔记\images\image-20220925155040933.png" alt="image-20220925155040933" style="zoom:50%;" />
+<img src="images/image-20221208195416801.png" alt="image-20221208195416801" style="zoom:50%;" />
 
 ### ==scanf函数的特别参数==
 

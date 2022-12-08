@@ -12,9 +12,9 @@ char short int会自动提升为int，故这三个整型使用%d即可
 
 无符号则用无符号占位符%u
 
-<img src="C:\Users\Lanson\Desktop\计算机\笔记\C笔记\images\image-20220925150735558.png" alt="image-20220925150735558" style="zoom:50%;" />
+![image-20221208195252348](images/image-20221208195252348.png)
 
-<img src="C:\Users\Lanson\Desktop\计算机\笔记\C笔记\images\image-20220925150833506.png" alt="image-20220925150833506" style="zoom:50%;" />
+![image-20221208195303904](images/image-20221208195303904.png)
 
 float和double都会类型提升为double
 
