@@ -2371,7 +2371,216 @@ E可以是String Integer Double等等
 
 ## java绘图坐标体系
 
+![image-20230905162312078](images/image-20230905162312078.png)
+
 ## java绘图技术
 
+![image-20230905163704114](images/image-20230905163704114.png)
+
+![image-20230905163719448](images/image-20230905163719448.png)
+
+![image-20230905163941171](images/image-20230905163941171.png)
+
+<img src="images/image-20230905164044163.png" alt="image-20230905164044163" style="zoom:67%;" />
+
+**加上这句话，使程序在点掉红叉之后JVM释放程序**
+
+**`this.setDefaultCloseOperation(JFrame.*EXIT_ON_CLOSE*);`**
+
+### paint方法调用条件
+
+![image-20230905170738468](images/image-20230905170738468.png)
+
+### Graphics类
+
+![image-20230905172544854](images/image-20230905172544854.png)
+
+设置画笔颜色
+
+```java
+g.setColor(Color.blue)
+```
+
+#### 画图片
+
+![image-20230905173504585](images/image-20230905173504585.png)
+
+```java
+Image image = Toolkit.getDefaultToolkit().getImage(Panel.class.getResource("./bg.png"));
+g.drawImage(image, 10, 10, 175, 221, this);
+//175 221为图片宽高 this意为在当前画板下画
+```
+
+#### 画字符串
+
+<img src="images/image-20230905173809141.png" alt="image-20230905173809141"  />
+
+100 100是字符串第一个字的**==左下角==**
+
 ## java事件处理机制
+
+![image-20230905180413460](images/image-20230905180413460.png)
+
+![image-20230905180425066](images/image-20230905180425066.png)
+
+![image-20230905180434664](images/image-20230905180434664.png)
+
+![image-20230905180956183](images/image-20230905180956183.png)
+
+# 第十七章 线程
+
+## 概念介绍
+
+### 进程
+
+![image-20230918153849829](images/image-20230918153849829.png)
+
+### 线程
+
+<img src="images/image-20230918154004890.png" alt="image-20230918154004890" style="zoom:67%;" />
+
+![image-20230918154128543](images/image-20230918154128543.png)
+
+### 并发与并行
+
+![image-20230918154142764](images/image-20230918154142764.png)
+
+## 线程使用
+
+<img src="images/image-20230918155613470.png" alt="image-20230918155613470" style="zoom:80%;" />
+
+### 创建线程的两种方式
+
+<img src="images/image-20230918160126211.png" alt="image-20230918160126211" style="zoom:80%;" />
+
+<img src="images/image-20230918160513936.png" alt="image-20230918160513936" style="zoom: 67%;" />
+
+<img src="images/image-20230918160656623.png" alt="image-20230918160656623" style="zoom:67%;" />
+
+### 线程sleep
+
+<img src="images/image-20230921101510074.png" alt="image-20230921101510074" style="zoom:67%;" />
+
+**一定要加try catch**
+
+## 线程方法
+
+**获取线程名**
+
+`Thread.currentThread().getName()`
+
+<img src="images/image-20230921102432905.png" alt="image-20230921102432905" style="zoom:67%;" />
+
+**当main线程启动一个子线程，主线程不会阻塞，会继续执行，相当于异步**
+
+**主线程结束，但子线程没结束，不会导致进程整个结束**
+
+![image-20230921110127421](images/image-20230921110127421.png)
+
+**如果是实现runnable接口，就不能用start方法**
+
+<img src="images/image-20230921110612930.png" alt="image-20230921110612930" style="zoom: 67%;" />
+
+**这么用，将实例化对象放到一个新Thread线程中，再调用s**
+
+![image-20230921111946359](images/image-20230921111946359.png)
+
+### 为什么是start而不是run？
+
+![image-20230921105000533](images/image-20230921105000533.png)
+
+调用run的话就是主线程调用，并没有新开一个线程，等run执行完毕才会向下执行
+
+<img src="images/image-20230921105514751.png" alt="image-20230921105514751" style="zoom:67%;" />
+
+**start调用start0方法后**，该线程并不一定会立马执行，只是**将线程变成了可运行状态**，具体什么时候执行，取决于CPU，由CPU统一调度
+
+### 继承Thread和实现Runnable的区别
+
+![image-20230928095959822](images/image-20230928095959822.png)
+
+**都可能会实现票超卖，要使用Synchronized关键字**
+
+### 线程终止
+
+![image-20230928100324677](images/image-20230928100324677.png)
+
+使用公共的set方法，来终止线程
+
+```java
+boolean loop = true;
+public void setLoop(boolean loop){
+    this.loop = loop;
+}
+
+实例化.setLoop(false);
+```
+
+![image-20230928100813930](images/image-20230928100813930.png)
+
+### 常用方法
+
+![image-20230928101420186](images/image-20230928101420186.png)
+
+![image-20230928105214591](images/image-20230928105214591.png)
+
+### 线程中断
+
+![image-20230928101812443](images/image-20230928101812443.png)
+
+是中断异常，**不是中止异常**
+
+<img src="images/image-20230928102016153.png" alt="image-20230928102016153" style="zoom: 67%;" />
+
+**interrupt 提前中断休眠**
+
+### 线程插队
+
+![image-20230928110418243](images/image-20230928110418243.png)
+
+主线程执行5次后，t2线程插队，再执行完剩下的
+
+**调用的对方的join方法**
+
+### 守护线程
+
+![image-20230928111434356](images/image-20230928111434356.png)
+
+**main线程结束后，子线程自动结束**
+
+<img src="images/image-20231007100951813.png" alt="image-20231007100951813" style="zoom:67%;" />
+
+**`线程名.setDaemon(true);`即可**
+
+## 线程的生命周期
+
+<img src="images/image-20231007102446175.png" alt="image-20231007102446175" style="zoom:100%;" />
+
+
+
+![image-20231007102808480](images/image-20231007102808480.png)
+
+## Synchronized 线程同步
+
+![image-20231007104555060](images/image-20231007104555060.png)
+
+**方法**
+
+![image-20231007104750403](images/image-20231007104750403.png)
+
+## 互斥锁
+
+![image-20231007111007529](images/image-20231007111007529.png)
+
+![image-20231007111419866](images/image-20231007111419866.png)
+
+**如果在静态方法/代码块实现同步，则不是this也不是对象，而是类 .class**
+
+![image-20231007112109937](images/image-20231007112109937.png)
+
+**如下方法锁不住，需要保证是共享对象，同一个对象**
+
+![image-20231007112314966](images/image-20231007112314966.png)
+
+## 死锁
 
