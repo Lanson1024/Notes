@@ -2550,6 +2550,8 @@ public void setLoop(boolean loop){
 
 <img src="images/image-20231007100951813.png" alt="image-20231007100951813" style="zoom:67%;" />
 
+![image-20231016153924558](images/image-20231016153924558.png)
+
 **`线程名.setDaemon(true);`即可**
 
 ## 线程的生命周期
@@ -2583,4 +2585,130 @@ public void setLoop(boolean loop){
 ![image-20231007112314966](images/image-20231007112314966.png)
 
 ## 死锁
+
+![image-20231016144706477](images/image-20231016144706477.png)
+
+![image-20231016145606462](images/image-20231016145606462.png)
+
+![image-20231016150443921](images/image-20231016150443921.png)
+
+**死锁时会处于阻塞blocked状态**
+
+a线程先拿到o1，b线程先拿到o2，双方互相拿到对方需要的线程，产生死锁
+
+## 释放锁
+
+![image-20231016151619756](images/image-20231016151619756.png)
+
+==**sleep和yield方法不会释放锁！**==
+
+![image-20231016152939229](images/image-20231016152939229.png)
+
+# 第十八章 IO流
+
+## 文件
+
+### 概念
+
+<img src="images/image-20231019100138683.png" alt="image-20231019100138683" style="zoom:67%;" />
+
+### 常用操作
+
+![image-20231019100406094](images/image-20231019100406094.png)
+
+<img src="images/image-20231019100647842.png" alt="image-20231019100647842" style="zoom: 67%;" />
+
+![image-20231019102645930](images/image-20231019102645930.png)
+
+![image-20231019104844241](images/image-20231019104844241.png)
+
+#### 获取文件的相关信息
+
+![image-20231019105029814](images/image-20231019105029814.png)
+
+#### 目录的操作和文件删除
+
+![image-20231019105723931](images/image-20231019105723931.png)
+
+<img src="images/image-20231019105842025.png" alt="image-20231019105842025" style="zoom:67%;" />
+
+![image-20231019110056004](images/image-20231019110056004.png)
+
+## IO流原理及流的分类
+
+![image-20231019111218031](images/image-20231019111218031.png)
+
+![image-20231019111403875](images/image-20231019111403875.png)
+
+字节流不会传输出错，字符流格式不会出错
+
+## 节点流和处理流
+
+## 输入流
+
+### InputStream
+
+#### FileInputStream 文件输入流
+
+![image-20231019112145586](images/image-20231019112145586.png)
+
+![image-20231023144241104](images/image-20231023144241104.png)
+
+转成char显示 sout((char)readData)；
+
+==**读取完毕文件后，要关闭文件，释放资源**==
+
+文件名.close()
+
+
+
+但是这么做，无法读取中文，因为一个中文占3个字节
+
+使用 **==read(byte[] b)==** 优化
+
+![image-20231023145033963](images/image-20231023145033963.png)
+
+new String(buf, 0, readLen) 表示把buf转成字符串，从0开始一直到readLen
+
+#### BufferedInputStream 缓冲字节输入流
+
+#### ObjectInputStream 对象字节输入流
+
+### Reader
+
+## 输出流
+
+### OutputStream
+
+
+
+### Writer
+
+## Properties类
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
